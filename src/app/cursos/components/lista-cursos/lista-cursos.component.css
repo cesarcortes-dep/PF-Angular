@@ -1,0 +1,38 @@
+table {
+  text-align: left;
+  width: 98%;
+  margin: 2rem auto;
+}
+
+table th {
+  text-align: center;
+}
+
+.mat-row .mat-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+  border-color: currentColor;
+}
+
+.demo-row-is-clicked {
+  font-weight: bold;
+}
+
+.mat-column-idCurso {
+  color: blue;
+  text-align: center;
+  font-weight: 1000;
+}
+
+.mat-column-nombreCurso {
+  color: green;
+  text-align: left;
+}
+
+.mat-column-descripcion {
+  text-align: justify;
+}

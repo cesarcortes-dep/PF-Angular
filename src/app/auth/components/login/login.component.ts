@@ -1,0 +1,36 @@
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Route, Router } from '@angular/router';
+import { CoreService } from 'src/app/core/services/core.service';
+import { Usuario } from 'src/app/modules/usuario';
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
+})
+export class LoginComponent implements OnInit {
+formulario: FormGroup = new FormGroup({
+  usuario: new FormControl('abner', [Validators.required]),
+  contrasena: new FormControl('1234', [Validators.required])
+})
+  constructor(
+   private core: CoreService,
+   private router: Router
+  ) { }
+
+  ngOnInit(): void {
+  }
+
+  login(){
+    const usuario: Usuario = {
+      usuario: this.formulario.value.usuario,
+      contrasena: this.formulario.value.contrasena,
+      admin: this.formulario.value.admin,
+      id:'1'
+    }
+    this.core.iniciarSesion(usuario)
+    this.router.navigate(['/cursos/lista-cursos'])
+  }
+
+}
